@@ -1,10 +1,17 @@
 import items from "./items.json"
+import { addItemtoCart } from "./shopping-cart.js"
 
 const storeItemTemplate = document.getElementById("store-item-template")
 const store = document.querySelector("[data-store]")
 const IMAGE_URL = "https://dummyimage.com/420x260"
 
 export function setupStore() {
+  if (store == null) return
+  document.addEventListener("click", e => {
+    if (!e.target.matches("[data-store-item-button]")) return
+    addItemtoCart(e.target)
+  })
+
   items.forEach(item => {
     renderStoreItem(item)
   })

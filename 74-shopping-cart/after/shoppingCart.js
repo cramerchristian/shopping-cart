@@ -23,7 +23,7 @@ export function setupShoppingCart() {
   renderCart()
 
   cartButton.addEventListener("click", () => [
-    cartItemsWrapper.classList.toggle("invisible")
+    cartItemsWrapper.classList.toggle("invisible"),
   ])
 }
 
